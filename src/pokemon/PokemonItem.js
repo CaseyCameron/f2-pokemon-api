@@ -4,7 +4,8 @@ import './PokemonItem.css';
 class PokemonItem extends Component {
   
   render() { 
-
+    const { itemProp } = this.props;
+    console.log(itemProp);
     return (
       <li className="PokemonItem">
         <h2>Venusaur-Mega</h2>
