@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './PokemonItem.css';
 
-class VillagerItem extends Component {
+class PokemonItem extends Component {
   
   render() { 
 
@@ -20,7 +20,6 @@ class VillagerItem extends Component {
       </li>
     );
   }
-
 }
  
 export default PokemonItem;

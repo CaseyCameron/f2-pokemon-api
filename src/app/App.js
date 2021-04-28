@@ -3,8 +3,8 @@ import Header from './Header';
 import Footer from './Footer';
 import Paging from './Paging';
 import PokemonList from '../pokemon/PokemonList';
-import Search from './Search';
-import '.App.css';
+// import Search from './Search';
+import './App.css';
 
 class App extends Component{
   state ={
@@ -17,9 +17,9 @@ class App extends Component{
       <div className="App">
         <Header/>
         <section className="search-options">
-          <search/>
+          {/* <search/> */}
           <Paging/>
-        </section>g
+        </section>
 
         <main>
           <PokemonList pokemon={pokemon}/>
