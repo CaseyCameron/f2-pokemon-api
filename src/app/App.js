@@ -22,7 +22,7 @@ class App extends Component{
 
   async fetchPokemon() {
     const { search } = this.state;
-    const { asc } = this.state;
+    //const { asc } = this.state;
 
     try {
       const response = await request
