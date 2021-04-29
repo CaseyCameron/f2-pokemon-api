@@ -4,6 +4,7 @@ import './Search.css';
 export default class Search extends Component {
   state = {
     search: '',
+    asc: ''
   }
 
   handleSearchChange = ({ target }) => {
@@ -12,9 +13,8 @@ export default class Search extends Component {
   
   handleSubmit = (e) => {
     e.preventDefault();
-    //this.props.onSearch(this.state);
+    this.props.onSearch(this.state);
   }
-
 
   render() {
     const { search } = this.state;
