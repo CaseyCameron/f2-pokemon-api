@@ -10,7 +10,7 @@ class PokemonList extends Component {
     return (
       <ul className="PokemonList">
         {pokemonProp.map(item => (
-          <PokemonItem key={item._id} itemProp={item}/>
+          <PokemonItem key={item._id} parsedPokemonProp={item}/>
         ))}
       </ul>
     );

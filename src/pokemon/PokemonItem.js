@@ -4,18 +4,17 @@ import './PokemonItem.css';
 class PokemonItem extends Component {
   
   render() { 
-    const { itemProp } = this.props;
-    console.log(itemProp);
+    const { parsedPokemonProp } = this.props;
     return (
       <li className="PokemonItem">
-        <h2>Venusaur-Mega</h2>
-        <p className="pokemon">venesaur-mega</p>
+        <h2>{parsedPokemonProp.pokemon}</h2>
+        <p className="hp">Hp: {parsedPokemonProp.hp}</p>
 
-        <p className="hp">80</p>
+        <p className="defense">Def: {parsedPokemonProp.defense}</p>
         
         <img 
-          src="http://assets.pokemon.com/assets/cms2/img/pokedex/full/003_f2.png" 
-          alt="venesaur"
+          src={parsedPokemonProp.url_image}
+          alt={parsedPokemonProp.pokemon}
         />
 
       </li>
