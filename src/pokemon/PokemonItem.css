@@ -23,9 +23,8 @@ h2 {
 }
 
 img {
-  height: 100%;
-  width: 100%;
-  min-height: 0;;
+  height: 100px;
+  min-height: 0;
   object-fit: contain;
   object-position: 30%;
 }

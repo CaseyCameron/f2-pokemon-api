@@ -1,8 +1,6 @@
 .Header {
   padding: 20px;
-  display: grid;
-  grid-template-columns: 50px 1fr;
-  grid-gap: 20px;
+  display: flex;
   align-items: center;
   background: mediumseagreen;
   color: white;
@@ -15,4 +13,5 @@
 
 h1 {
   margin: 0;
+  font-size: 2rem;
 }

@@ -7,11 +7,11 @@ class Header extends Component {
     return (
       <header className="Header">
         
-        <img 
+        {/* <img 
           className="logo" 
           alt="cherry blossom tree logo" 
           src="cherry-blossom-tree.png"
-        />
+        /> */}
 
         <h1>Pokemon Critter Things</h1>
         
