@@ -13,12 +13,11 @@ class PokemonItem extends Component {
           alt={parsedPokemonProp.pokemon}
         />
 
-        <p className="hp">Hp: {parsedPokemonProp.hp}</p>
-        <p className="defense">Def: {parsedPokemonProp.defense}</p>
         <p className="type">Type_1: {parsedPokemonProp.type_1}</p>
         <p className="type">Type_2: {parsedPokemonProp.type_2}</p>
+        <p className="shape">shape: {parsedPokemonProp.type_2}</p>
         <p className="ability">Ability: {parsedPokemonProp.ability_1}</p>
-        
+
       </li>
     );
   }

@@ -8,7 +8,7 @@ export default class Search extends Component {
     asc: ''
   }
 
-  handleSearchChange = ({ target }) => {
+  handleSearchChange = ({ target }) => { //search tracks search input by getting the target value from handleSubmit's (e)
     this.setState({ search: target.value });
   }
   
@@ -16,10 +16,20 @@ export default class Search extends Component {
     this.setState({ sortField: target.value });
   }
 
-  handleSubmit = (e) => {
+  handleSubmit = (e) => { //e is the form (like our old new formData component)
     e.preventDefault();
-    this.props.onSearch(this.state);
+    this.props.onSearch(this.state); //const onSearch = this.props.onSearch;
+    // const search = this.state.search;
+    // onSearch(search);
   }
+
+  componentDidUpdate(prevProp, prevState) {
+    if (prevState !== this.state) {
+      this.props.onSearch(this.state);
+      // this.props.onSearch(this.state.search);
+    }
+  }
+
 
   render() {
     const { search, sortField } = this.state;

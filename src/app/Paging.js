@@ -3,20 +3,20 @@ import './Paging.css';
 
 export default class Paging extends Component {
 
-  handleSubmit = (e) => {
-    e.preventDefault();
-  }
+  // handleSubmit = (e) => {
+  //   e.preventDefault();
+  // }
+
+  handlePrev = () => this.props.onPaging(-1);
+  handleNext = () => this.props.onPaging(1);
 
   render() {
-
+    const onPaging = this.props.onPaging;
     return (
-      <form className="Paging" onSubmit={this.handleSubmit}>
-
-        <button className="prev">◀</button>
-        <span>Page 1</span>
-        <button className="next">▶</button>
-
-      </form>
+      <div className="Paging">
+        <button onClick={this.handlePrev}>◀</button>
+        <button onClick={this.handleNext}>▶</button>
+      </div>
     );
   }
 
