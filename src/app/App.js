@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import Header from './Header';
 import Footer from './Footer';
-import Paging from './Paging';
+//import Paging from './Paging';
 import PokemonList from '../pokemon/PokemonList';
 import Search from './Search';
 import request from 'superagent';
@@ -14,23 +14,24 @@ class App extends Component{
     pokemonData: [], //initializing a value for state
     search: '',
     sortFilter: 'pokemon',
-    sortOrder: 'asc'
+    sortOrder: 'asc',
+    perPage: ''
   }
 
   componentDidMount() { //this updates DOM w/ pokemon api from fetchPokemon
     this.fetchPokemon();
   }
 
-  async fetchPokemon(search, sortFilter, sortOrder) {
+  async fetchPokemon(search, sortFilter, sortOrder, perPage) {
     const response = await request
       .get(POKEMON_API_URL) //get our pokemon api
-      .query({ pokemon: search, sort: sortFilter, direction: sortOrder, });
+      .query({ pokemon: search, sort: sortFilter, direction: sortOrder, perPage: perPage });
     this.setState({ pokemonData: response.body.results }); //write the api data into state
   }
 
-  handleSearch = ({ search, sortField, sortOrder }) => {
-    this.setState({ search: search, sortFilter: sortField, sortOder: sortOrder },
-      () => this.fetchPokemon(search, sortField, sortOrder)); //anon callback refetches data after setting state
+  handleSearch = ({ search, sortField, sortOrder, perPage }) => {
+    this.setState({ search: search, sortFilter: sortField, sortOder: sortOrder, perPage: perPage },
+      () => this.fetchPokemon(search, sortField, sortOrder, perPage)); //anon callback refetches data after setting state
   }
 
   render() {
@@ -43,7 +44,7 @@ class App extends Component{
         <section className="search-options">
           <Search onSearch={this.handleSearch}/> {/* on search, call handleSearch */}
         </section>
-        <Paging/>
+        {/*<Paging/>*/}
         <main>
           <PokemonList 
             pokemonProp={pokemonData}

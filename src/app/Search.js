@@ -5,7 +5,8 @@ export default class Search extends Component {
   state = {
     search: '',
     sortField: '',
-    sortOrder: 'asc'
+    sortOrder: 'asc',
+    perPage: ''
   }
 
   handleSearchChange = ({ target }) => { //search tracks search input by getting the target value from handleSubmit's (e)
@@ -31,9 +32,13 @@ export default class Search extends Component {
     }
   }
 
+  handlePaging = ({ target }) => {
+    this.setState({ perPage: target.value });
+  }
+
 
   render() {
-    const { search, sortField, sortOrder } = this.state;
+    const { search, sortField, sortOrder, perPage } = this.state;
     
     return (
       <form className="Search" onSubmit={this.handleSubmit}>
@@ -58,6 +63,12 @@ export default class Search extends Component {
         <select name="sortOrder" value={sortOrder} onChange={this.handleSortOrder}>
           <option value="asc">ascending</option>
           <option value="desc">descending</option>
+        </select>
+
+        <select name="perPage" value={perPage} onChange={this.handlePaging}>
+          <option value="25">25</option>
+          <option value="50">50</option>
+          <option value ="75">75</option>
         </select>
 
         <button>🔎</button>
