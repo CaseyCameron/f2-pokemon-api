@@ -2,12 +2,12 @@
   height: 100vh;
   display: grid;
   grid-template-rows: auto auto 1fr auto;
-  background: darkseagreen;
+  background: rgb(197, 231, 197);
 }
 
 .search-options {
-    background: palegoldenrod;
-    border-bottom: 1px solid darkgreen;
+    background: rgba(205, 238, 190, 0.541);
+    border-bottom: 1px solid rgb(1, 12, 1);
     padding: 10px 20px;
     
     display: flex;

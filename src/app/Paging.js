@@ -15,6 +15,7 @@ export default class Paging extends Component {
     return (
       <div className="Paging">
         <button onClick={this.handlePrev}>◀</button>
+        <span>#</span>
         <button onClick={this.handleNext}>▶</button>
       </div>
     );
