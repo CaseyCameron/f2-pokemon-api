@@ -50,6 +50,9 @@ export default class Search extends Component {
           <option value="type_1">by type</option>
           <option value="shape">by shape</option>
           <option value="ability_1">by ability</option>
+          <option value="hp">by hp</option>
+          <option value="attack">by attack</option>
+          <option value="defense">by defense</option>
         </select>
 
         <select name="sortOrder" value={sortOrder} onChange={this.handleSortOrder}>

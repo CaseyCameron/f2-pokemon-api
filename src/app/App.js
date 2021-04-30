@@ -22,7 +22,6 @@ class App extends Component{
   }
 
   async fetchPokemon(search, sortFilter, sortOrder) {
-    console.log(search, sortFilter, sortOrder);
     const response = await request
       .get(POKEMON_API_URL) //get our pokemon api
       .query({ pokemon: search, sort: sortFilter, direction: sortOrder, });
