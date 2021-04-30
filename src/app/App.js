@@ -13,32 +13,25 @@ class App extends Component{
   state = {
     pokemonData: [], //initializing a value for state
     search: '',
-    direction: 'asc'
+    sortFilter: 'pokemon',
+    sortOrder: 'asc'
   }
 
   componentDidMount() { //this updates DOM w/ pokemon api from fetchPokemon
     this.fetchPokemon();
   }
 
-  async fetchPokemon(search, sortFilter) {
-    const { direction } = this.state;
-
-    try {
-      const response = await request
-        .get(POKEMON_API_URL) //get our pokemon api
-        .query({ pokemon: search, direction: direction, sort: sortFilter });
-      this.setState({ pokemonData: response.body.results }); //write the api data into state
-    }
-    catch (err) {
-      console.log(err);
-    }
+  async fetchPokemon(search, sortFilter, sortOrder) {
+    console.log(search, sortFilter, sortOrder);
+    const response = await request
+      .get(POKEMON_API_URL) //get our pokemon api
+      .query({ pokemon: search, sort: sortFilter, direction: sortOrder, });
+    this.setState({ pokemonData: response.body.results }); //write the api data into state
   }
 
-  handleSearch = ({ search, sortField }) => {
-    this.setState(
-      { search: search },
-      () => this.fetchPokemon(search, sortField)
-    );
+  handleSearch = ({ search, sortField, sortOrder }) => {
+    this.setState({ search: search, sortFilter: sortField, sortOder: sortOrder },
+      () => this.fetchPokemon(search, sortField, sortOrder)); //anon callback refetches data after setting state
   }
 
   render() {
